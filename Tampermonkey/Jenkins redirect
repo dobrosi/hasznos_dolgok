@@ -1,0 +1,13 @@
+// ==UserScript==
+// @name         HTTP Jenkins redirect to HTTPS
+// @version      0.1
+// @description  HTTP Jenkins redirect to HTTPS
+// @author       Andris
+// @match        http://jenkins.intra.microsec.hu/*
+// ==/UserScript==
+
+(function() {
+    'use strict';
+
+    location.href = location.href.replaceAll('http://', 'HTTPS://');
+})();
