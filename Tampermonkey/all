@@ -5,13 +5,17 @@
 // @author       Andris
 // @match        *://*/*
 // @icon         data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==
+// @grant        none
 // ==/UserScript==
-
 
 (function() {
     'use strict';
 
-    showPassword();
+    setTimeout(function() {
+        console.log('hasznos dolgok');
+
+        showPassword();
+    }, 1500);
 
     function showPassword() {
         function addSelectListener(item) {
@@ -20,9 +24,6 @@
                 field.type = (field.type === 'password' ? 'text' : 'password');
             });
         }
-
-        window.addEventListener('load', function() {
-            document.querySelectorAll("input[type='password']").forEach(addSelectListener);
-        }, false);
+        document.querySelectorAll("input[type='password']").forEach(addSelectListener);
     }
 })();
