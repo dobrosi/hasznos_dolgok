@@ -1,0 +1,28 @@
+// ==UserScript==
+// @name         hasznos dolgok
+// @version      0.1
+// @description  hasznos dolgok
+// @author       Andris
+// @match        *://*/*
+// @icon         data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==
+// ==/UserScript==
+
+
+(function() {
+    'use strict';
+
+    showPassword();
+
+    function showPassword() {
+        function addSelectListener(item) {
+            item.addEventListener('select', function(event) {
+                let field = event.target;
+                field.type = (field.type === 'password' ? 'text' : 'password');
+            });
+        }
+
+        window.addEventListener('load', function() {
+            document.querySelectorAll("input[type='password']").forEach(addSelectListener);
+        }, false);
+    }
+})();
