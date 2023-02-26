@@ -1,9 +1,12 @@
 // ==UserScript==
 // @name         HTTP Jenkins redirect to HTTPS
+// @namespace    http://tampermonkey.net/
 // @version      0.1
 // @description  HTTP Jenkins redirect to HTTPS
-// @author       Andris
+// @author       You
 // @match        http://jenkins.intra.microsec.hu/*
+// @icon         https://www.google.com/s2/favicons?sz=64&domain=tampermonkey.net
+// @grant        none
 // ==/UserScript==
 
 (function() {
